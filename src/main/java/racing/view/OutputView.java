@@ -20,8 +20,8 @@ public class OutputView {
 
     public void printOngoingResult(List<Car> rawResult) {
         String result = rawResult.stream()
-                .map(Object::toString)
-                .collect(Collectors.joining("\n", "", "\n"));
+                        .map((car)->car.getName()+" : "+"-".repeat(car.getPosition()))
+                        .collect(Collectors.joining("\n", "", "\n"));
         System.out.println(result);
     }
 }
