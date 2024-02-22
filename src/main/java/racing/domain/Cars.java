@@ -34,8 +34,7 @@ public class Cars {
 
 
     public List<Car> findWinners() {
-        Collections.sort(cars);
-        return cars.stream().filter((car) -> car.isSamePosition(cars.get(0))).toList();
+        return cars.stream().sorted(Car::compareTo).filter((car) -> car.isSamePosition(cars.get(0))).toList();
     }
 
     public List<Car> getCars() {
